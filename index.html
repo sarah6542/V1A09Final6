@@ -1,0 +1,273 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My Final Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .main-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            background: url('5.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .main-visual button {
+            padding: 200px 400px;
+            font-size: 2em;
+            cursor: pointer;
+            background: transparent;
+            color: transparent;
+            border: none;
+            position: absolute;
+            top: 50%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+        }
+
+        .horizontal-scroll-wrapper {
+            display: none;
+            overflow-x: auto;
+            white-space: nowrap;
+            width: 100%;
+            height: 100vh;
+            box-sizing: border-box;
+            background: url('7.jpg') repeat-x;
+            background-size: auto 100%;
+        }
+
+        .scroll-content {
+            display: flex;
+        }
+
+        .item {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            top: 0;
+            left: 0;
+        }
+
+        .item .item-button {
+            cursor: pointer;
+            position: absolute;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .item:nth-child(1) .item-button,
+        .item:nth-child(2) .item-button,
+        .item:nth-child(3) .item-button,
+        .item:nth-child(4) .item-button,
+        .item:nth-child(9) .item-button {
+            width: 100px;
+            height: 300px;
+        }
+
+        .item:nth-child(5) .item-button,
+        .item:nth-child(6) .item-button,
+        .item:nth-child(7) .item-button,
+        .item:nth-child(8) .item-button {
+            width: 100px;
+            height: 100px;
+        }
+
+        .item:nth-child(1) .item-button {
+            top: 45%;
+            left: 35%;
+        }
+
+        .item:nth-child(2) .item-button {
+            top: 45%;
+            left: 5%;
+        }
+
+        .item:nth-child(3) .item-button {
+            top: 45%;
+            left: -30%;
+        }
+
+        .item:nth-child(4) .item-button {
+            top: 45%;
+            left: -65%;
+        }
+
+        .item:nth-child(5) .item-button {
+            top: 40%;
+            left: -355%;
+        }
+
+        .item:nth-child(6) .item-button {
+            top: 40%;
+            left: -385%;
+        }
+
+        .item:nth-child(7) .item-button {
+            top: 40%;
+            left: -415%;
+        }
+
+        .item:nth-child(8) .item-button {
+            top: 40%;
+            left: -455%;
+        }
+
+        .item:nth-child(9) .item-button {
+            top: 45%;
+            left: -495%;
+        }
+
+        .item-button:hover {
+            background: rgba(0, 123, 255, 0.7);
+            border: 2px solid #007BFF;
+        }
+
+        .work-image {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .return-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            background: transparent;
+            color: transparent;
+            border: none;
+            z-index: 999;
+            display: none;
+        }
+
+        .visible-return-button {
+            background: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-visual">
+        <button id="enter-button"></button>
+    </div>
+
+    <div class="horizontal-scroll-wrapper">
+        <div class="scroll-content">
+            <div class="item">
+                <button class="item-button" data-item="1"></button>
+            </div>
+            <div class="item">
+                <button class="item-button" data-item="2"></button>
+            </div>
+            <div class="item">
+                <button class="item-button" data-item="3"></button>
+            </div>
+            <div class="item">
+                <button class="item-button" data-item="4"></button>
+            </div>
+            <div class="item">
+                <button class="item-button" data-item="5"></button>
+            </div>
+            <div class="item">
+                <button class="item-button" data-item="6"></button>
+            </div>
+            <div class="item">
+                <button class="item-button" data-item="7"></button>
+            </div>
+            <div class="item">
+                <button class="item-button" data-item="8"></button>
+            </div>
+            <div class="item">
+                <button class="item-button" data-item="9"></button>
+            </div>
+        </div>
+    </div>
+
+    <img id="work-to-show-1" class="work-image" src="1.jpg" alt="Your Work 1">
+    <img id="work-to-show-2" class="work-image" src="2.jpg" alt="Your Work 2">
+    <img id="work-to-show-3" class="work-image" src="3.jpg" alt="Your Work 3">
+    <img id="work-to-show-4" class="work-image" src="4.jpg" alt="Your Work 4">
+    <img id="work-to-show-5" class="work-image" src="images.jpg" alt="Your Work 5">
+    <img id="work-to-show-6" class="work-image" src="903cda0d93a1c3c894cbba8ba81f7b59.jpg" alt="Your Work 6">
+    <img id="work-to-show-7" class="work-image" src="maxresdefault.jpg" alt="Your Work 7">
+    <img id="work-to-show-8" class="work-image" src="504eb53364323e31c462b74cd8a3a291.jpg" alt="Your Work 8">
+    <img id="work-to-show-9" class="work-image" src="to-be-continued-handwrite-title-on-red-round-background-old-movie-circle-ending-screen-motion-graphics-video.jpg" alt="Your Work 9">
+
+    <button class="return-button" id="return-button">Return</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const enterButton = document.getElementById('enter-button');
+            const mainVisual = document.querySelector('.main-visual');
+            const scrollWrapper = document.querySelector('.horizontal-scroll-wrapper');
+            const items = document.querySelectorAll('.item');
+            const returnButton = document.getElementById('return-button');
+
+            enterButton.addEventListener('click', function() {
+                mainVisual.style.display = 'none';
+                const temporaryImage = document.createElement('img');
+                temporaryImage.src = '6.jpg';
+                temporaryImage.style.width = '100%';
+                temporaryImage.style.height = '100%';
+                document.body.appendChild(temporaryImage);
+                setTimeout(function() {
+                    temporaryImage.style.display = 'none';
+                    scrollWrapper.style.display = 'flex';
+                }, 1000);
+            });
+
+            scrollWrapper.addEventListener('scroll', function() {
+                const scrollPosition = scrollWrapper.scrollLeft;
+                scrollWrapper.style.backgroundPosition = `${-scrollPosition}px 0`;
+            });
+
+            document.body.addEventListener('wheel', function(event) {
+                event.preventDefault();
+                scrollWrapper.scrollLeft += event.deltaY;
+            });
+
+            items.forEach(function(item) {
+                const itemButton = item.querySelector('.item-button');
+                itemButton.addEventListener('click', function() {
+                    scrollWrapper.style.display = 'none';
+                    const workToShow = document.getElementById('work-to-show-' + itemButton.dataset.item);
+                    workToShow.style.display = 'block';
+                    returnButton.classList.toggle('visible-return-button', parseInt(itemButton.dataset.item) >= 5);
+                    returnButton.style.display = 'block';
+                });
+            });
+
+            returnButton.addEventListener('click', function() {
+                document.querySelectorAll('.work-image').forEach(function(workImage) {
+                    workImage.style.display = 'none';
+                });
+                scrollWrapper.style.display = 'flex';
+                returnButton.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
